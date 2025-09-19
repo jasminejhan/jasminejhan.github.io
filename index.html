@@ -84,6 +84,7 @@
             justify-content: center;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
         .nav-link {
@@ -95,6 +96,7 @@
             border-radius: 5px;
             transition: all 0.3s ease;
             font-weight: 500;
+            cursor: pointer;
         }
 
         .nav-link:hover {
@@ -102,6 +104,19 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(44, 62, 80, 0.2);
+        }
+
+        .nav-link.active {
+            background-color: #000000;
+            color: white;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
         }
 
         /* Responsive design */
@@ -138,29 +153,76 @@
 </head>
 <body>
     <div class="container">
-        
-        <img src="main.jpeg" 
-             alt="Profile Photo" 
-             class="profile-image">
-
+        <img src="main.jpeg" alt="Profile Photo" class="profile-image">
         <h1>Jasmine Han</h1>
 
         <nav class="navigation">
             <a href="CV.pdf" class="nav-link">CV</a>
-            <a href="research.html" class="nav-link">Research</a>
-            <a href="software.html" class="nav-link">Software</a>
+            <span class="nav-link" onclick="showSection('research')">Research</span>
+            <span class="nav-link" onclick="showSection('software')">Software</span>
             <a href="personal.html" class="nav-link">Personal</a>
         </nav>
-        
-        <p class="bio">
-            Welcome! I'm currently an Economics data scientist at Walmart. 
-            I graduated from UChicago in 2024 with degrees in Economics and Computational and Applied Math. 
-            My research interests lie broadly in labor economics and applied econometrics.
-        </p>
 
-         <p class="bio">
-            Feel free to reach out at jasminehan [at] uchicago [dot] edu.
-        </p>
+        <!-- Default Bio Section -->
+        <div id="bio-section" class="content-section active">
+            <p class="bio">
+                Welcome! I'm currently an Economics data scientist at Walmart. 
+                I graduated from UChicago in 2024 with degrees in Economics and Computational and Applied Math. 
+                My research interests lie broadly in labor economics and applied econometrics.
+            </p>
+            <p class="bio">
+                Feel free to reach out at jasminehan [at] uchicago [dot] edu.
+            </p>
+        </div>
+
+        <!-- Research Section -->
+        <div id="research-section" class="content-section">
+            <p class="bio">
+                Research section WIP
+            </p>
+        </div>
+
+        <!-- Software Section -->
+        <div id="software-section" class="content-section">
+            <p class="bio">
+                Software section WIP
+            </p>
+        </div>
     </div>
+
+    <script>
+        function showSection(sectionName) {
+            const clickedButton = event.target;
+            const isButtonActive = clickedButton.classList.contains('active');
+
+            // Hide all content sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Remove active class from all nav links EXCEPT the clicked one initially
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if (link !== clickedButton) {
+                    link.classList.remove('active');
+                }
+            });
+
+            if ((sectionName === 'research' || sectionName === 'software') && !isButtonActive) {
+                // Show the requested section and activate button
+                if (sectionName === 'research') {
+                    document.getElementById('research-section').classList.add('active');
+                } else if (sectionName === 'software') {
+                    document.getElementById('software-section').classList.add('active');
+                }
+                clickedButton.classList.add('active');
+            } else {
+                // Show bio section and deactivate the clicked button
+                document.getElementById('bio-section').classList.add('active');
+                clickedButton.classList.remove('active');
+            }
+        }
+    </script>
 </body>
 </html>
