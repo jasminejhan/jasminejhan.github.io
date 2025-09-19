@@ -11,10 +11,34 @@
             box-sizing: border-box;
         }
 
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+        }
+        
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+          font-weight: bold;
+        }
+        
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+          font-style: italic, oblique;
+        }
+        
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+          font-weight: bold;
+          font-style: italic, oblique;
+        }
+        
         body {
-            font-family: 'Latin Modern Roman', 'Computer Modern', 'Times New Roman', serif;
+          font-family: "Computer Modern", sans-serif;
             background-color: #fafafa;
-            color: #333;
+            color: #000000;
             line-height: 1.6;
             min-height: 100vh;
             display: flex;
@@ -32,7 +56,7 @@
             font-size: 2.5rem;
             margin-bottom: 2rem;
             font-weight: normal;
-            color: #2c3e50;
+            color: #000000;
         }
 
         .profile-image {
@@ -46,7 +70,7 @@
         .bio {
             font-size: 1.1rem;
             margin-bottom: 3rem;
-            color: #555;
+            color: #000000;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
@@ -60,7 +84,7 @@
         }
 
         .nav-link {
-            color: #2c3e50;
+            color: #000000;
             text-decoration: none;
             font-size: 1.1rem;
             padding: 0.8rem 1.5rem;
@@ -113,14 +137,12 @@
     <div class="container">
         <h1>Jasmine Han</h1>
         
-        <img src="https://via.placeholder.com/250x250/e8e8e8/999999?text=Your+Photo" 
+        <img src="main.jpeg" 
              alt="Profile Photo" 
              class="profile-image">
         
         <p class="bio">
-            Write your short bio here. This is a brief description about yourself, 
-            your background, interests, or current work. Keep it concise and engaging 
-            to give visitors a quick overview of who you are.
+            Welcome! I'm currently a data scientist on Walmart Economics. 
         </p>
         
         <nav class="navigation">
