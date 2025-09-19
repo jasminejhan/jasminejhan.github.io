@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Homepage</title>
+    <title>Jasmine Han</title>
     <style>
         * {
             margin: 0;
@@ -11,8 +11,32 @@
             box-sizing: border-box;
         }
 
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf');
+        }
+        
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf');
+          font-weight: bold;
+        }
+        
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf');
+          font-style: italic, oblique;
+        }
+        
+        @font-face {
+          font-family: "Computer Modern";
+          src: url('http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf');
+          font-weight: bold;
+          font-style: italic, oblique;
+        }
+        
         body {
-            font-family: 'Georgia', serif;
+            font-family: "Computer Modern", sans-serif;
             background-color: #fafafa;
             color: #333;
             line-height: 1.6;
@@ -38,12 +62,10 @@
         .profile-image {
             width: 250px;
             height: 250px;
-            border-radius: 50%;
             object-fit: cover;
             margin: 0 auto 2rem auto;
             display: block;
             border: 4px solid #e8e8e8;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .bio {
@@ -115,16 +137,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Your Name</h1>
+        <h1>Jasmine Han</h1>
         
         <img src="https://via.placeholder.com/250x250/e8e8e8/999999?text=Your+Photo" 
              alt="Profile Photo" 
              class="profile-image">
         
         <p class="bio">
-            Write your short bio here. This is a brief description about yourself, 
-            your background, interests, or current work. Keep it concise and engaging 
-            to give visitors a quick overview of who you are.
+            site WIP
         </p>
         
         <nav class="navigation">
