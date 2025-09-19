@@ -106,6 +106,16 @@
             box-shadow: 0 4px 8px rgba(44, 62, 80, 0.2);
         }
 
+        /* Prevent hover effects on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            .nav-link:hover {
+                background-color: transparent;
+                color: #000000;
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
         .nav-link.active {
             background-color: #000000;
             color: white;
@@ -178,14 +188,14 @@
         <!-- Research Section -->
         <div id="research-section" class="content-section">
             <p class="bio">
-                Research section WIP
+                WIP
             </p>
         </div>
 
         <!-- Software Section -->
         <div id="software-section" class="content-section">
             <p class="bio">
-                Software section WIP
+                WIP
             </p>
         </div>
     </div>
@@ -194,6 +204,9 @@
         function showSection(sectionName) {
             const clickedButton = event.target;
             const isButtonActive = clickedButton.classList.contains('active');
+
+            // Force remove any hover effects on mobile
+            clickedButton.blur();
 
             // Hide all content sections
             const sections = document.querySelectorAll('.content-section');
@@ -221,6 +234,9 @@
                 // Show bio section and deactivate the clicked button
                 document.getElementById('bio-section').classList.add('active');
                 clickedButton.classList.remove('active');
+                
+                // Force a reflow to ensure styles are applied immediately
+                clickedButton.offsetHeight;
             }
         }
     </script>
